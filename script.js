@@ -448,8 +448,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById(id + '-overlay').classList.remove('active');
   }
 
-  // HUD View Switcher Buttons
-  const hudButtons = document.querySelectorAll('.hud-btn');
+  // HUD View Switcher Buttons (for camera views)
+  const hudButtons = document.querySelectorAll('.hud-btn[data-view]');
   hudButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       hudButtons.forEach(b => b.classList.remove('active'));
@@ -458,6 +458,110 @@ document.addEventListener('DOMContentLoaded', () => {
       animateCameraTo(view);
     });
   });
+
+  // Smooth Scroll Navigation Helpers
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
+  const scrollToBottom = () => {
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: 'smooth'
+    });
+  };
+
+  // 3D Canvas Navigation & Return Controls (Up & Down)
+  const btn3dComeUp = document.getElementById('btn-3d-come-up');
+  if (btn3dComeUp) {
+    btn3dComeUp.addEventListener('click', () => {
+      scrollToTop();
+      showToast('Returned to Top');
+    });
+  }
+
+  const btn3dGoBottom = document.getElementById('btn-3d-go-bottom');
+  if (btn3dGoBottom) {
+    btn3dGoBottom.addEventListener('click', () => {
+      scrollToBottom();
+      showToast('Scrolled to Bottom');
+    });
+  }
+
+  const btnToolScrollUp = document.getElementById('btn-tool-scroll-up');
+  if (btnToolScrollUp) {
+    btnToolScrollUp.addEventListener('click', () => {
+      scrollToTop();
+      showToast('Returned to Top');
+    });
+  }
+
+  const btnToolScrollDown = document.getElementById('btn-tool-scroll-down');
+  if (btnToolScrollDown) {
+    btnToolScrollDown.addEventListener('click', () => {
+      scrollToBottom();
+      showToast('Scrolled to Bottom');
+    });
+  }
+
+  const hudBtnComeUp = document.getElementById('hud-btn-come-up');
+  if (hudBtnComeUp) {
+    hudBtnComeUp.addEventListener('click', () => {
+      scrollToTop();
+      showToast('Returned to Top');
+    });
+  }
+
+  const hudBtnGoBottom = document.getElementById('hud-btn-go-bottom');
+  if (hudBtnGoBottom) {
+    hudBtnGoBottom.addEventListener('click', () => {
+      scrollToBottom();
+      showToast('Scrolled to Bottom');
+    });
+  }
+
+  // Floating Action Navigation (Top & Bottom Buttons)
+  const floatingTopBtn = document.getElementById('btn-floating-top');
+  const floatingBottomBtn = document.getElementById('btn-floating-bottom');
+
+  if (floatingTopBtn) floatingTopBtn.addEventListener('click', scrollToTop);
+  if (floatingBottomBtn) floatingBottomBtn.addEventListener('click', scrollToBottom);
+
+  window.addEventListener('scroll', () => {
+    const scrollPos = window.scrollY;
+    if (scrollPos > 260) {
+      if (floatingTopBtn) floatingTopBtn.classList.add('visible');
+      if (floatingBottomBtn) floatingBottomBtn.classList.add('visible');
+    } else {
+      if (floatingTopBtn) floatingTopBtn.classList.remove('visible');
+      if (floatingBottomBtn) floatingBottomBtn.classList.remove('visible');
+    }
+  });
+
+  // Footer Back-to-Top Button
+  const btnFooterTop = document.getElementById('btn-footer-back-to-top');
+  if (btnFooterTop) {
+    btnFooterTop.addEventListener('click', scrollToTop);
+  }
+
+  // Footer Quick Action Links (Modals & Drawers)
+  const footerLinkRooms = document.getElementById('footer-link-rooms');
+  if (footerLinkRooms) footerLinkRooms.addEventListener('click', () => openModal('room-modal-overlay'));
+
+  const footerLinkEvents = document.getElementById('footer-link-events');
+  if (footerLinkEvents) footerLinkEvents.addEventListener('click', () => openModal('event-modal-overlay'));
+
+  const footerLinkMenu = document.getElementById('footer-link-menu');
+  if (footerLinkMenu) footerLinkMenu.addEventListener('click', () => openDrawer('menu-drawer'));
+
+  const footerLinkCart = document.getElementById('footer-link-cart');
+  if (footerLinkCart) footerLinkCart.addEventListener('click', () => openDrawer('cart-drawer'));
+
+  const footerLinkHistory = document.getElementById('footer-link-history');
+  if (footerLinkHistory) footerLinkHistory.addEventListener('click', () => openDrawer('history-drawer'));
 
   // Header Button Handlers
   document.getElementById('btn-open-rooms').addEventListener('click', () => openModal('room-modal-overlay'));

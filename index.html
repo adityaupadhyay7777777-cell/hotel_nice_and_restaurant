@@ -81,8 +81,27 @@
         <!-- 3D WebGL Canvas Container -->
         <div id="canvas-container"></div>
 
+        <!-- Canvas Top Return & Navigation Controls -->
+        <div class="canvas-top-bar">
+          <button class="btn-canvas-action btn-come-up" id="btn-3d-come-up" title="Return to Top of Website">
+            <i class="fa-solid fa-arrow-up"></i> Return to Top
+          </button>
+          <div class="canvas-hint">
+            <i class="fa-solid fa-hand-pointer"></i> Drag to rotate • Scroll/Pinch to zoom
+          </div>
+          <button class="btn-canvas-action btn-go-bottom" id="btn-3d-go-bottom" title="Go to Bottom of Website">
+            <i class="fa-solid fa-arrow-down"></i> Go to Bottom
+          </button>
+        </div>
+
         <!-- Floating Tools -->
         <div class="floating-tools">
+          <button class="tool-btn tool-btn-up" id="btn-tool-scroll-up" title="Return to Top of Page">
+            <i class="fa-solid fa-arrow-up"></i>
+          </button>
+          <button class="tool-btn tool-btn-down" id="btn-tool-scroll-down" title="Go to Bottom of Page">
+            <i class="fa-solid fa-arrow-down"></i>
+          </button>
           <button class="tool-btn" id="btn-toggle-light" title="Toggle Day/Night Lighting">
             <i class="fa-solid fa-moon"></i>
           </button>
@@ -113,6 +132,12 @@
           </button>
           <button class="hud-btn" data-view="events">
             <i class="fa-solid fa-cake-candles"></i> Party Hall
+          </button>
+          <button class="hud-btn hud-exit-btn" id="hud-btn-come-up" title="Exit 3D View and Scroll to Top">
+            <i class="fa-solid fa-circle-arrow-up"></i> Top
+          </button>
+          <button class="hud-btn hud-down-btn" id="hud-btn-go-bottom" title="Go to Bottom of Page">
+            <i class="fa-solid fa-circle-arrow-down"></i> Bottom
           </button>
         </nav>
       </div>
@@ -176,6 +201,177 @@
     </section>
 
   </main>
+
+  <!-- Professional Luxury App Footer -->
+  <footer class="app-footer">
+    <!-- VIP Reservation & Experience Banner -->
+    <div class="footer-top-strip">
+      <div class="footer-strip-content">
+        <div class="strip-icon-badge">
+          <i class="fa-solid fa-crown"></i>
+        </div>
+        <div>
+          <h3>Experience Luxury Hospitality in Mansa</h3>
+          <p>Book premium AC rooms, plan unforgettable celebrations, or savor hot Punjabi thalis today.</p>
+        </div>
+      </div>
+      <div class="footer-strip-actions">
+        <a href="tel:+916239484977" class="btn-strip-action btn-strip-call">
+          <i class="fa-solid fa-phone"></i> +91 62394-84977
+        </a>
+        <a href="https://wa.me/916239484977?text=Hello%20Hotel%20Nice%20%26%20Restaurant,%20I%20would%20like%20to%20inquire%20about%20a%20booking" target="_blank" rel="noopener" class="btn-strip-action btn-strip-whatsapp">
+          <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <!-- Main 4-Column Footer Grid -->
+    <div class="footer-main-container">
+      <div class="footer-grid">
+        
+        <!-- Column 1: Brand & Identity -->
+        <div class="footer-col footer-col-brand">
+          <div class="footer-brand-header">
+            <div class="footer-logo-wrapper">
+              <img src="logo.jpg" alt="Hotel Nice & Restaurant Logo" class="footer-logo-img">
+            </div>
+            <div>
+              <h2 class="footer-brand-title">Hotel Nice & Restaurant</h2>
+              <span class="footer-brand-subtitle">Luxury Hospitality & Fine Dining • Mansa</span>
+            </div>
+          </div>
+          <p class="footer-desc">
+            The premier choice for memorable family stays, delicious Punjabi cuisine, and grand celebrations in Mansa, Punjab. Experience comfort and authentic hospitality.
+          </p>
+
+          <div class="footer-rating-badge">
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <span><strong>4.8 / 5.0</strong> Guest Satisfaction (350+ Reviews)</span>
+          </div>
+
+          <div class="footer-social-links">
+            <a href="https://wa.me/916239484977" target="_blank" rel="noopener" aria-label="WhatsApp" class="social-icon-btn whatsapp" title="Chat on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="tel:+916239484977" aria-label="Direct Phone" class="social-icon-btn phone" title="Call Front Desk">
+              <i class="fa-solid fa-phone"></i>
+            </a>
+            <a href="https://maps.google.com/?q=Hotel+Nice+Mansa+Punjab" target="_blank" rel="noopener" aria-label="Google Maps" class="social-icon-btn maps" title="Find us on Google Maps">
+              <i class="fa-solid fa-map-location-dot"></i>
+            </a>
+            <a href="#location-section" aria-label="3D Tour" class="social-icon-btn tour3d" title="3D Layout Tour">
+              <i class="fa-solid fa-cubes"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links & Experiences -->
+        <div class="footer-col">
+          <h4 class="footer-col-title"><i class="fa-solid fa-compass"></i> Explore & Services</h4>
+          <ul class="footer-links-list">
+            <li><a href="#location-section" id="footer-link-3d"><i class="fa-solid fa-angle-right"></i> Interactive 3D Hotel Layout</a></li>
+            <li><a href="#best-food-section" id="footer-link-food"><i class="fa-solid fa-angle-right"></i> Best Food Specials & Thalis</a></li>
+            <li><a href="javascript:void(0)" id="footer-link-rooms"><i class="fa-solid fa-angle-right"></i> Luxury AC Family Rooms</a></li>
+            <li><a href="javascript:void(0)" id="footer-link-events"><i class="fa-solid fa-angle-right"></i> Party Hall & Ring Ceremonies</a></li>
+            <li><a href="javascript:void(0)" id="footer-link-menu"><i class="fa-solid fa-angle-right"></i> Full Restaurant Menu</a></li>
+            <li><a href="javascript:void(0)" id="footer-link-cart"><i class="fa-solid fa-angle-right"></i> Your Cart & Ordering</a></li>
+            <li><a href="javascript:void(0)" id="footer-link-history"><i class="fa-solid fa-angle-right"></i> Past Orders & Digital Invoices</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Hours & Location Details -->
+        <div class="footer-col">
+          <h4 class="footer-col-title"><i class="fa-solid fa-clock"></i> Timings & Hospitality</h4>
+          <ul class="footer-info-list">
+            <li class="info-item">
+              <div class="info-icon"><i class="fa-solid fa-utensils"></i></div>
+              <div class="info-text">
+                <strong>Restaurant Dining</strong>
+                <span>8:00 AM – 11:30 PM (Mon – Sun)</span>
+              </div>
+            </li>
+            <li class="info-item">
+              <div class="info-icon"><i class="fa-solid fa-bed"></i></div>
+              <div class="info-text">
+                <strong>AC Rooms & Front Desk</strong>
+                <span>24/7 Check-in & Reception</span>
+              </div>
+            </li>
+            <li class="info-item">
+              <div class="info-icon"><i class="fa-solid fa-bell-concierge"></i></div>
+              <div class="info-text">
+                <strong>Room Dining Service</strong>
+                <span>Available Round the Clock</span>
+              </div>
+            </li>
+            <li class="info-item">
+              <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="info-text">
+                <strong>Hotel Address</strong>
+                <span>Back Side Gaushalla, Near Chugli Ghar, Mansa, Punjab 151505</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact & Payment Methods -->
+        <div class="footer-col">
+          <h4 class="footer-col-title"><i class="fa-solid fa-headset"></i> Direct Contacts</h4>
+          <p class="footer-contact-desc">Reach out for room bookings, party reservations, or bulk catering orders:</p>
+          
+          <div class="footer-contact-cards">
+            <a href="tel:+916239484977" class="contact-mini-card">
+              <i class="fa-solid fa-phone"></i>
+              <div>
+                <span class="contact-label">Primary Desk</span>
+                <span class="contact-val">+91 62394-84977</span>
+              </div>
+            </a>
+            <a href="tel:+916239495531" class="contact-mini-card">
+              <i class="fa-solid fa-mobile-screen"></i>
+              <div>
+                <span class="contact-label">Reservations</span>
+                <span class="contact-val">+91 62394-95531</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="footer-payments-block">
+            <span class="payments-title">Accepted Payment Modes</span>
+            <div class="payment-badges-grid">
+              <span class="pay-chip"><i class="fa-solid fa-qrcode"></i> UPI / QR</span>
+              <span class="pay-chip"><i class="fa-brands fa-google-pay"></i> GPay</span>
+              <span class="pay-chip"><i class="fa-solid fa-credit-card"></i> Cards</span>
+              <span class="pay-chip"><i class="fa-solid fa-money-bill-wave"></i> Cash</span>
+              <span class="pay-chip"><i class="fa-solid fa-building-columns"></i> NetBanking</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Footer Bottom Row -->
+    <div class="footer-bottom-bar">
+      <div class="footer-bottom-container">
+        <div class="copyright-info">
+          <p>© 2026 <strong>Hotel Nice & Restaurant</strong>. All Rights Reserved. • Mansa, Punjab</p>
+          <p class="fssai-notice"><i class="fa-solid fa-shield-halved"></i> 100% Pure Vegetarian Kitchen • High Hygiene Standards Assured</p>
+        </div>
+        <div class="footer-bottom-actions">
+          <button class="btn-footer-top" id="btn-footer-back-to-top">
+            <i class="fa-solid fa-arrow-up"></i> Back to Top
+          </button>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <!-- Side Drawer: Food Menu & Cart Management -->
   <div class="drawer-overlay" id="menu-drawer-overlay"></div>
@@ -549,6 +745,18 @@
         <button class="btn-primary" id="btn-finish-all">Done</button>
       </div>
     </div>
+  </div>
+
+  <!-- Floating Action Buttons: Quick Navigation Top & Bottom -->
+  <div class="floating-nav-container" id="floating-nav-container">
+    <button class="floating-return-top" id="btn-floating-top" title="Return to Top of Page" aria-label="Return to Top">
+      <i class="fa-solid fa-arrow-up"></i>
+      <span class="floating-top-tooltip">Back to Top</span>
+    </button>
+    <button class="floating-return-bottom" id="btn-floating-bottom" title="Go to Bottom of Page" aria-label="Go to Bottom">
+      <i class="fa-solid fa-arrow-down"></i>
+      <span class="floating-bottom-tooltip">Go to Bottom</span>
+    </button>
   </div>
 
   <!-- Toast Notification Container -->
